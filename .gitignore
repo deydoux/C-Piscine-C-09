@@ -1,3 +1,5 @@
+*.o
+*.a
 main.c
 test.c
 a.out
