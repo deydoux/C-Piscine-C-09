@@ -1,6 +1,5 @@
 *.o
 *.a
-main.c
-test.c
-a.out
+ex01/srcs
+ex01/includes
 .*.swp
