@@ -1,18 +1,19 @@
+NAME=libft.a
 SOURCES=srcs/ft_putchar.c srcs/ft_putstr.c srcs/ft_strcmp.c srcs/ft_strlen.c srcs/ft_swap.c
 OBJECTS=$(SOURCES:.c=.o)
 
-all: libft.a
+all: $(NAME)
 
-libft.a: $(OBJECTS)
-	ar -cq libft.a $(OBJECTS)
+$(NAME): $(OBJECTS)
+	ar -crs $(NAME) $(OBJECTS)
 
-%.o: %.c includes/ft.h
-	gcc -Wall -Wextra -Werror -c $< -o $@
+%.o: %.c
+	gcc -Wall -Wextra -Werror -I includes -c $< -o $@
 
 clean:
 	rm -f $(OBJECTS)
 
 fclean: clean
-	rm -f libft.a
+	rm -f $(NAME)
 
 re: fclean all
